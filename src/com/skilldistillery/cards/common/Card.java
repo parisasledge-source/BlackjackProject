@@ -7,7 +7,6 @@ public class Card {
 	private Suit suit;
 	private Rank rank;
 	
-	//TODO ... everything else 
 	public Card(Suit suit, Rank rank) {
 		super();
 		this.suit = suit;
@@ -30,17 +29,16 @@ public class Card {
 		Card other = (Card) obj;
 		return rank == other.rank && suit == other.suit;
 	}
-
-
-	@Override
-	public String toString() {
-	    StringBuilder builder = new StringBuilder();
-	    builder.append(rank).append(" of ").append(suit);
-	    return builder.toString();
-	}
 	
-	  public int getValue() {
-		    return rank.getValue();
+	  @Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(rank).append(" of ").append(suit);
+		return builder.toString();
+	}
+
+	public int getValue() {
+		    return this.rank.getValue();
 		  }
 	
 	

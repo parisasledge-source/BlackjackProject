@@ -3,23 +3,23 @@ package com.skilldistillery.cards.common;
 public enum Suit {
 	
 	
-	HEARTS("Queen of hearts"), SPADES("Mother of spades"), CLUBS("King of clubs"), DIAMONDS("Legend of diamonds");
+	HEARTS("Hearts"), SPADES("Spades"), CLUBS("Clubs"), DIAMONDS("Diamonds");
 	
-	private String name;
+	private final String name;
 	
-	private Suit(String suitName) {
-		name = suitName;	
+	private Suit(String name) {
+		this.name = name;	
 	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
-//	@Override
-//	  public String toString() {
-//	    return this.name;
-//	  }
-
+	@Override
+	  public String toString() {
+	    return this.name;
+	  }
+	
 	  public String getName() {
 	    return name;
 	  }

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.skilldistillery.cards.blackjack.Hand;
+
 public class Deck {
 
-	private List<Card> cards = new ArrayList<Card>(52);
-//	{
-//		//instance initializer
-//		this.cards = new ArrayList<Card>(52);
-//	}
+	private List<Card> cards;
+
 	public Deck() {
+		cards = new ArrayList<Card>(52);
 		for (Suit suit : Suit.values()) {
 			for (Rank rank : Rank.values()) {
 				Card newCard = new Card(suit, rank);
@@ -35,5 +35,12 @@ public class Deck {
 		return cards.remove(0);
 		
 	}
+	
+	public void dealCard(Hand hand) {
+		
+		
+	}
+	
+	
 	
 }
