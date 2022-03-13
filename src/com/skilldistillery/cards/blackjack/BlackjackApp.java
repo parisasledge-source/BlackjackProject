@@ -6,15 +6,14 @@ import java.util.Scanner;
 
 import com.skilldistillery.cards.common.Card;
 import com.skilldistillery.cards.common.Deck;
-import com.skilldistillery.cards.entities.Player;
+import com.skilldistillery.cards.entities.Dealer;
 
 public class BlackjackApp {
 
 	static Scanner sc = new Scanner(System.in);
 
 	private BlackjackHand hand = new BlackjackHand();
-	private Deck deck = new Deck();
-	private Player player = new Player();
+	//private Deck deck = new Deck();
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -27,22 +26,22 @@ public class BlackjackApp {
 
 	private void start() {
 		Deck deck = new Deck();
-		deck.shuffle();
+		Dealer dealer = new Dealer();
+		
+		dealer.shuffle();
 
+		hand.addCard(dealer.dealCard());
 
-		List<Card> cardList = new ArrayList<>();
+		List<Card> hand = new ArrayList<>();
 
 		String userInput = "";
 		//System.out.println("This hand: " + hand);
 		
 		do {
-			
 
-			hand.addCard(deck.dealCard());
-			//cardList.add(deck.dealCard());
+			hand.add(dealer.dealCard());
 			
-			//System.out.println("This hand: " + hand.addCard(cardList));
-			player.hit();
+			System.out.println("This hand: " + hand);
 		
 			System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 			userInput = sc.next();
@@ -50,22 +49,20 @@ public class BlackjackApp {
 		
 		do {
 			
-			cardList.add(deck.dealCard());
-			System.out.println("This hand: " + cardList);
-			
+			hand.add(deck.dealCard());
+			System.out.println("This hand: " + hand);
+			System.out.println("Deck size: " + deck.checkDeckSize());
 			
 		
 		} while (deck.checkDeckSize() > 10);
 		
 		// while (deck.checkDeckSize() > 10 );
-		System.out.println("=============");
-		System.out.println(hand.getHandValue());
-		//hand.getHandValue();
-//		int handValue = 0;
-//		for (Card dealtCard : hand) {
-//			System.out.println(dealtCard + " (value:" + dealtCard.getValue() + ")");
-//			handValue += dealtCard.getValue();
-//		}
-//		System.out.println("Hand value: " + handValue);
+
+
+		/*
+		 * int handValue = 0; for (Card dealtCard : hand) { System.out.println(dealtCard
+		 * + " (value:" + dealtCard.getValue() + ")"); handValue +=
+		 * dealtCard.getValue(); } System.out.println("Hand value: " + handValue);
+		 */
 	}
 }

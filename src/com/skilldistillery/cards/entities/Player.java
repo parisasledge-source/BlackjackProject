@@ -10,16 +10,17 @@ import com.skilldistillery.cards.common.Deck;
 
 public class Player {
 	private Deck deck = new Deck();
-	//List<Card> hand = new ArrayList<>();
+	List<Card> list = new ArrayList<>();
 	private BlackjackHand hand = new BlackjackHand();
 	public Player() {
 	}
 	
-	public Card hit() {
-		
-		
-		hand.addCard(deck.dealCard());
-		return null;
+	/*
+	 * public Card hit() {
+	 * 
+	 * 
+	 * hand.addCard(deck.dealCard()); return list ;
+	 */
 		
 //		int handValue = 0;
 //		for (Card dealtCard : hand) {
@@ -27,7 +28,7 @@ public class Player {
 //			handValue += dealtCard.getValue();
 //		}
 //		System.out.println("Hand value: " + handValue);
-	}
+	//}
 	
 	public void stand() {
 		
