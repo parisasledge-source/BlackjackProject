@@ -23,7 +23,7 @@ public class Deck {
 	}
 
 	public int checkDeckSize() {
-		return cards.size();
+		return cards.size() + 1;
 	}
 
 	public void shuffle() {

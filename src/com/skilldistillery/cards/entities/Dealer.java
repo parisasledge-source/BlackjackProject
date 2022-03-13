@@ -9,14 +9,21 @@ public class Dealer extends Player{
 	private BlackjackHand hand = new BlackjackHand();
 	private Deck deck = new Deck();
 	
-	public Card dealCard() {
-		return deck.dealCard();
-		
+	public int deckSize() {
+		return deck.checkDeckSize();
 	}
 	
 	public void shuffle() {
 		deck.shuffle();
 	}
+	
+	public Card dealCard() {
+		return deck.dealCard();
+		
+	}
+	
+	
+
 	
 	
 

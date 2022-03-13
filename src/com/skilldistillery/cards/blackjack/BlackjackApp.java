@@ -32,29 +32,38 @@ public class BlackjackApp {
 
 		hand.addCard(dealer.dealCard());
 
-		List<Card> hand = new ArrayList<>();
+		List<Card> playerHand = new ArrayList<>();
 
 		String userInput = "";
 		//System.out.println("This hand: " + hand);
 		
+		
+		
 		do {
-
-			hand.add(dealer.dealCard());
 			
-			System.out.println("This hand: " + hand);
+			playerHand.add(dealer.dealCard());
+			
+			
+			System.out.println("Players hand: " + playerHand);
+			System.out.println("Deck size: " + dealer.deckSize());
 		
 			System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 			userInput = sc.next();
-		} while (!userInput.equals("s"));
-		
-		do {
 			
-			hand.add(deck.dealCard());
-			System.out.println("This hand: " + hand);
-			System.out.println("Deck size: " + deck.checkDeckSize());
+			//System.out.println("This hand: " + hand);
 			
+			
+			
+		} while ((!userInput.equals("s")) && (deck.checkDeckSize() > 10));
 		
-		} while (deck.checkDeckSize() > 10);
+//		do {
+//			
+//			hand.add(deck.dealCard());
+//			System.out.println("This hand: " + hand);
+//			System.out.println("Deck size: " + deck.checkDeckSize());
+//			
+//		
+//		} while (deck.checkDeckSize() > 10);
 		
 		// while (deck.checkDeckSize() > 10 );
 
