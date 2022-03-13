@@ -15,10 +15,11 @@ public class Player {
 	public Player() {
 	}
 	
-	public void hit() {
+	public Card hit() {
 		
 		
 		hand.addCard(deck.dealCard());
+		return null;
 		
 //		int handValue = 0;
 //		for (Card dealtCard : hand) {
