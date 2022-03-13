@@ -28,6 +28,18 @@ public class BlackjackHand extends Hand{
 		
 	}
 	
+	public int getHandValue1() {
+	
+	int handValue = 0;
+	for (Card dealtCard : cards) {
+		//System.out.println(dealtCard + " (value:" + dealtCard.getValue() +")");		
+		handValue += dealtCard.getValue();
+	}
+	
+	return handValue;
+	
+}
+	
 	
 
 }

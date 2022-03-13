@@ -21,10 +21,5 @@ public class Dealer extends Player{
 		return deck.dealCard();
 		
 	}
-	
-	
-
-	
-	
 
 }

@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.skilldistillery.cards.common.Card;
 import com.skilldistillery.cards.common.Deck;
 import com.skilldistillery.cards.entities.Dealer;
+import com.skilldistillery.cards.entities.Player;
 
 public class BlackjackApp {
 
@@ -27,6 +28,7 @@ public class BlackjackApp {
 	private void start() {
 		Deck deck = new Deck();
 		Dealer dealer = new Dealer();
+		Player player = new Player();
 
 		dealer.shuffle();
 
@@ -35,7 +37,7 @@ public class BlackjackApp {
 		List<Card> playerHand;
 		List<Card> dealerHand;
 
-		String userInput1, userInput2, userInput3, userInput4 = "";
+		String userInput1, userInput2, userInput3 = "", userInput4 = "";
 		// System.out.println("This hand: " + hand);
 
 		System.out.println("Are you ready to play blackjack? (y/n)");
@@ -67,7 +69,7 @@ public class BlackjackApp {
 				
 				System.out.println("Deck size: " + dealer.deckSize());
 				
-				do {
+				while (!userInput3.equals("s")) {
 					playerHand.add(dealer.dealCard());
 
 					
@@ -76,10 +78,10 @@ public class BlackjackApp {
 					
 					System.out.println("Player's hand: " + playerHand);
 					System.out.println("Deck size: " + dealer.deckSize());
-					System.out.println("Hand value: " + hand.getHandValue());
+					System.out.println("Hand value: " + player.getHandValue());
 
 					// System.out.println("This hand: " + hand);
-				} while (!userInput3.equals("s"));
+				} ;
 
 
 				do {

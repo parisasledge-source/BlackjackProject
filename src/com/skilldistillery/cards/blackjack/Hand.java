@@ -10,32 +10,35 @@ public abstract class Hand{
 	protected List<Card> cards;
 
 	public Hand() {	
+		super();
 		this.cards = new ArrayList<>();
 	}
 	
 	public void addCard(Card card) {
-		cards.add(card);
-		
+		this.cards.add(card);
 	}
 	
 	public void clear(){
 		clear();
 	}
 
-	public int getHandValue() {
-		 int handValue = 0; 
-		 for (Card dealtCard : cards) { 
-			 System.out.println(dealtCard
-		 + " (value:" + dealtCard.getValue() + ")"); 
-			 handValue += dealtCard.getValue(); 
-			 } 
-		 System.out.println("Hand value: " + handValue);
-		return 0;
-	}
+//	public int getHandValue() {
+//		
+//		int handValue = 0;
+//		for (Card dealtCard : cards) {
+//			//System.out.println(dealtCard + " (value:" + dealtCard.getValue() +")");
+//			handValue += dealtCard.getValue();
+//		}
+//		
+//		return handValue;
+//		
+//	}
+	
+	public abstract int getHandValue();
 
 	@Override
 	public String toString() {
-		return "Hand [cards=" + cards + "]";
+		return "Hand [cards=" + cards + "]" + getHandValue();
 	}
 
 }
