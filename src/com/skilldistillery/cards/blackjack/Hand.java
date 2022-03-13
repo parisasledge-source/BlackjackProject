@@ -19,10 +19,17 @@ public abstract class Hand{
 	}
 	
 	public void clear(){
-		
+		clear();
 	}
 
 	public int getHandValue() {
+		 int handValue = 0; 
+		 for (Card dealtCard : cards) { 
+			 System.out.println(dealtCard
+		 + " (value:" + dealtCard.getValue() + ")"); 
+			 handValue += dealtCard.getValue(); 
+			 } 
+		 System.out.println("Hand value: " + handValue);
 		return 0;
 	}
 
