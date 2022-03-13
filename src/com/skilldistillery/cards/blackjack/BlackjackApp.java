@@ -10,6 +10,8 @@ import com.skilldistillery.cards.common.Deck;
 
 public class BlackjackApp {
 
+	static Scanner sc = new Scanner(System.in);
+	
 	private BlackjackHand hand = new BlackjackHand();
 	private Deck deck = new Deck();
 
@@ -30,12 +32,22 @@ public class BlackjackApp {
 		
 		List<Card> hand = new ArrayList<>();
 		
-//		Do{
-//			
-//		}while ();
+		String userInput = "";
+		do{
+			System.out.println("h for hit, s for stand");
+			
+			userInput = sc.next();
+			
+			if (userInput == "h") {
+				
+				hand.add(deck.dealCard());
+				System.out.println(deck.dealCard());
+			}
+			
+			
+		}while (deck.checkDeckSize() > 10);
 		
 		for (int i = 0; i < 5; i++) {
-			hand.add(deck.dealCard());
 		}
 		
 		int handValue = 0;
