@@ -18,6 +18,24 @@ public abstract class Hand{
 		
 	}
 	
+	public void clear(){
+		
+	}
+
+	public int getHandValue() {
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Hand [cards=" + cards + "]";
+	}
+	
+	
+	
+	
+	
+	
 	
 
 }
