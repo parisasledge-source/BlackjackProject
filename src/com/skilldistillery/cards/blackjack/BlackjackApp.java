@@ -36,11 +36,13 @@ public class BlackjackApp {
 		//System.out.println("This hand: " + hand);
 		
 		do {
+			
 
 			hand.addCard(deck.dealCard());
 			//cardList.add(deck.dealCard());
 			
-			System.out.println("This hand: " + hand);
+			//System.out.println("This hand: " + hand.addCard(cardList));
+			player.hit();
 		
 			System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 			userInput = sc.next();
@@ -59,7 +61,6 @@ public class BlackjackApp {
 		System.out.println("=============");
 		System.out.println(hand.getHandValue());
 		//hand.getHandValue();
-		player.hit();
 //		int handValue = 0;
 //		for (Card dealtCard : hand) {
 //			System.out.println(dealtCard + " (value:" + dealtCard.getValue() + ")");

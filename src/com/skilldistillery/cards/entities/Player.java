@@ -3,15 +3,22 @@ package com.skilldistillery.cards.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.skilldistillery.cards.blackjack.BlackjackHand;
+import com.skilldistillery.cards.blackjack.Hand;
 import com.skilldistillery.cards.common.Card;
+import com.skilldistillery.cards.common.Deck;
 
 public class Player {
-	List<Card> hand = new ArrayList<>();
-	
+	private Deck deck = new Deck();
+	//List<Card> hand = new ArrayList<>();
+	private BlackjackHand hand = new BlackjackHand();
 	public Player() {
 	}
 	
 	public void hit() {
+		
+		
+		hand.addCard(deck.dealCard());
 		
 //		int handValue = 0;
 //		for (Card dealtCard : hand) {
