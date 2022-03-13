@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.skilldistillery.cards.common.Card;
 import com.skilldistillery.cards.common.Deck;
+import com.skilldistillery.cards.entities.Player;
 
 public class BlackjackApp {
 
@@ -13,6 +14,7 @@ public class BlackjackApp {
 
 	private BlackjackHand hand = new BlackjackHand();
 	private Deck deck = new Deck();
+	private Player player = new Player();
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -27,16 +29,16 @@ public class BlackjackApp {
 		Deck deck = new Deck();
 		deck.shuffle();
 
-		hand.addCard(deck.dealCard());
 
-		List<Card> hand = new ArrayList<>();
+		List<Card> cardList = new ArrayList<>();
 
 		String userInput = "";
 		//System.out.println("This hand: " + hand);
 		
 		do {
 
-			hand.add(deck.dealCard());
+			hand.addCard(deck.dealCard());
+			//cardList.add(deck.dealCard());
 			
 			System.out.println("This hand: " + hand);
 		
@@ -46,21 +48,23 @@ public class BlackjackApp {
 		
 		do {
 			
-			hand.add(deck.dealCard());
-			System.out.println("This hand: " + hand);
+			cardList.add(deck.dealCard());
+			System.out.println("This hand: " + cardList);
 			
 			
 		
 		} while (deck.checkDeckSize() > 10);
 		
 		// while (deck.checkDeckSize() > 10 );
-
-
-		int handValue = 0;
-		for (Card dealtCard : hand) {
-			System.out.println(dealtCard + " (value:" + dealtCard.getValue() + ")");
-			handValue += dealtCard.getValue();
-		}
-		System.out.println("Hand value: " + handValue);
+		System.out.println("=============");
+		System.out.println(hand.getHandValue());
+		//hand.getHandValue();
+		player.hit();
+//		int handValue = 0;
+//		for (Card dealtCard : hand) {
+//			System.out.println(dealtCard + " (value:" + dealtCard.getValue() + ")");
+//			handValue += dealtCard.getValue();
+//		}
+//		System.out.println("Hand value: " + handValue);
 	}
 }
