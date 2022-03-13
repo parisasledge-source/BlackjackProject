@@ -25,7 +25,7 @@ public class BlackjackApp {
 	}
 
 	private void start() {
-		//Deck deck = new Deck();
+		Deck deck = new Deck();
 		deck.shuffle();
 		
 		hand.addCard(deck.dealCard());
@@ -34,18 +34,19 @@ public class BlackjackApp {
 		
 		String userInput = "";
 		do{
-			System.out.println("h for hit, s for stand");
+			//System.out.println("h for hit, s for stand");
 			
-			userInput = sc.next();
+			//userInput = sc.next();
 			
-			if (userInput == "h") {
+			//if (userInput == "h") {
 				
 				hand.add(deck.dealCard());
 				System.out.println(deck.dealCard());
-			}
+				System.out.println("This hand: " +  hand);
+			//}
 			
 			
-		}while (deck.checkDeckSize() > 10);
+		}while (deck.checkDeckSize() > 10  );
 		
 		for (int i = 0; i < 5; i++) {
 		}
