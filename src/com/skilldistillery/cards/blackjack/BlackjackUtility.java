@@ -28,13 +28,13 @@ public class BlackjackUtility {
 
 		String userInput1, userInput2, userInput3 = "", userInput4 = "";
 
-		System.out.println("Are you ready to play blackjack? (y/n)");
-		userInput1 = sc.next();
+		//System.out.println("Are you ready to play blackjack? (y/n)");
+		//userInput1 = sc.next();
 		
 		int bustedPlayerValue = 0;
 		int pushPlayerValue = 0;
 
-		if (userInput1.equals("y")) {
+		System.out.println("****** Welcome to blackJack ******");
 
 			do {
 
@@ -187,9 +187,7 @@ public class BlackjackUtility {
 				}
 			} while ((deck.checkDeckSize() > 10));
 
-		} else if (userInput1 == "n") {
-			System.out.println("See you later!");
-		}
 	}
-
 }
+
+
