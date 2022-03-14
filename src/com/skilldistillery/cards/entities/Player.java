@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.skilldistillery.cards.blackjack.BlackjackHand;
 import com.skilldistillery.cards.common.Card;
-//import com.skilldistillery.cards.common.Deck;
+import com.skilldistillery.cards.common.Deck;
 
 public class Player {
 	
@@ -18,20 +18,14 @@ public class Player {
 		
 	}
 	
-	public String showCard() {
-		return hand.showCard();
-	}
-	
-	public String showCard2() {
-		return hand.showCard2();
-	}
-	
-	
-	
 	public int getHandValue() {
 		return hand.getHandValue();
 	}
-		
+	
+//	public void shuffle() {
+//		//deck.shuffle();
+//	}
+	
 	public String displayValue() {
 		return hand.toString();
 	}
