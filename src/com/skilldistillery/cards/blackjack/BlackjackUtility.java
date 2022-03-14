@@ -45,15 +45,27 @@ public class BlackjackUtility {
 
 					playerHand.add(dealer.dealCard());
 					System.out.println("Player's first card: " + playerHand.get(0));
-
+					//int a = dealerHand.get(0).getValue();
+					
 					dealerHand.add(dealer.dealCard());
 					System.out.println("Dealer's first card: Hidden ");
-
+					//int b = dealerHand.get(1).getValue();
+					//int c = a + b;
+					
 					playerHand.add(dealer.dealCard());
 					System.out.println("Player's second card: " + playerHand.get(1));
 
 					dealerHand.add(dealer.dealCard());
 					System.out.println("Dealer's second card: " + dealerHand.get(1));
+					
+//					if (c == 21) {
+//						
+//						System.out.println("Dealer's first card: " + dealerHand.get(0));
+//						System.out.println("Dealer's second card: " + dealerHand.get(1));
+//						hand.isBlackJack();
+//						System.out.println("Dealer wins!");
+//						//break;	
+//					}
 
 					System.out.println("Deck size: " + dealer.deckSize());
 
@@ -70,12 +82,35 @@ public class BlackjackUtility {
 							playerHandValue += dealtCard.getValue();
 						}
 						System.out.println("Hand value: " + playerHandValue);
+						
+						if (playerHandValue > 21) {
+							hand.isBust();
+							break;
+						}else if (playerHandValue == 21) {
+							hand.isBlackJack();
+							break;
+						}
 
 						System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 						userInput3 = sc.next();
 					} while (!userInput3.equals("s"));
 
-					do {
+					while (!userInput4.equals("s")) {
+						//if (hand.isBust()) {
+							//break;
+						//}
+						//if (hand.isBlackJack()) {
+							//break;
+						//}
+						
+						System.out.println("Dealer's first card: " + dealerHand.get(0));
+						System.out.println("Dealer's second card: " + dealerHand.get(1));
+						
+						
+						
+						System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
+						userInput4 = sc.next();
+						
 						dealerHand.add(dealer.dealCard());
 
 						System.out.println("Dealer's hand: " + dealerHand);
@@ -89,7 +124,7 @@ public class BlackjackUtility {
 						System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 						userInput4 = sc.next();
 
-					} while (!userInput4.equals("s"));
+					} ;
 
 				} else if (userInput2 == "n") {
 					System.out.println("You have chosen to quit the game.\nHave a nice day!");

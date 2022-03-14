@@ -23,13 +23,13 @@ public class BlackjackHand extends Hand {
 
 	public boolean isBlackJack() {
 		System.out.println("Black Jack! Yohooo!");
-		return false;
+		return true;
 
 	}
 
 	public boolean isBust() {
-		System.out.println("Busted! Too Bad!");
-		return false;
+		System.out.println("Busted! Boooo!");
+		return true;
 	}
 
 }

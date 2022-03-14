@@ -15,6 +15,7 @@ public class BlackjackApp {
 
 	private void start() {
 		
+		
 		BlackjackUtility.run();
 	
 	}
