@@ -16,13 +16,15 @@ public class BlackjackHand extends Hand{
 	//public void addCard(Card card) {
 	//}
 	
+	int handValue = 0;
+	int value = 0;
 	public int getHandValue() {
-		int handValue = 0;
 		
-		for (Card dealtCard : this.cards) {
+		for (Card dealtCard : cards) {
 			//cards.add(deck.dealCard());
 			int cardValue = dealtCard.getValue();
-			//System.out.println(dealtCard + " (value:" + dealtCard.getValue() +")");		
+			System.out.println(dealtCard + " (value:" + dealtCard.getValue() +")");
+			
 			handValue += cardValue;
 		}
 		return handValue;
