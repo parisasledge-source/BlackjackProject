@@ -13,15 +13,16 @@ public class Player {
 	protected List<Card> cards = new ArrayList<>();
 	private BlackjackHand hand = new BlackjackHand();
 	
+	public void getCard(Card card) {
+		hand.addCard(card);
+		
+	}
+	
 	public int getHandValue() {
 		return hand.getHandValue();
 	}
-	
-	public void shuffle() {
-		//deck.shuffle();
-	}
-	
-	public String displayCards() {
+		
+	public String displayValue() {
 		return hand.toString();
 	}
 

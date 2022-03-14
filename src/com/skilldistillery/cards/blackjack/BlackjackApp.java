@@ -78,7 +78,7 @@ public class BlackjackApp {
 					
 					System.out.println("Player's hand: " + playerHand);
 					System.out.println("Deck size: " + dealer.deckSize());
-					System.out.println("Hand value: " + player.getHandValue());
+					System.out.println("Hand value: " + player.displayValue());
 
 					// System.out.println("This hand: " + hand);
 				} ;
