@@ -95,7 +95,9 @@ public class BlackjackUtility {
 						userInput3 = sc.next();
 					} while (!userInput3.equals("s"));
 
-					while (!userInput4.equals("s")) {
+					
+					int dealerHandValue = 0;
+					do {
 						//if (hand.isBust()) {
 							//break;
 						//}
@@ -103,28 +105,46 @@ public class BlackjackUtility {
 							//break;
 						//}
 						
-						System.out.println("Dealer's first card: " + dealerHand.get(0));
+						System.out.println("\nDealer's first card: " + dealerHand.get(0));
 						System.out.println("Dealer's second card: " + dealerHand.get(1));
+						int a = dealerHand.get(0).getValue();
+						int b = dealerHand.get(1).getValue();
 						
+						int c = a + b;
 						
-						
-						System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
-						userInput4 = sc.next();
-						
-						dealerHand.add(dealer.dealCard());
-
-						System.out.println("Dealer's hand: " + dealerHand);
-						System.out.println("Deck size: " + dealer.deckSize());
-						int dealerHandValue = 0;
-						for (Card dealtCard : dealerHand) {
-							dealerHandValue += dealtCard.getValue();
+						if (c >= 17) {
+							System.out.println("");
+							break;
+							
+						}else {
+							
+							System.out.println("Adding a dealer card... ");
+							//System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
+							//userInput4 = sc.next();
+							
+							dealerHand.add(dealer.dealCard());
+							
+							System.out.println("Dealer's hand: " + dealerHand);
+							System.out.println("Deck size: " + dealer.deckSize());
+							dealerHandValue = 0;
+							for (Card dealtCard : dealerHand) {
+								dealerHandValue += dealtCard.getValue();
+							}
+							System.out.println("Hand value: " + dealerHandValue);
+							
+							//System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
+							//userInput4 = sc.next();
+							if (dealerHandValue > 21) {
+								hand.isBust();
+								break;
+							}else if (dealerHandValue == 21) {
+								hand.isBlackJack();
+								break;
+							}
 						}
-						System.out.println("Hand value: " + dealerHandValue);
+						
 
-						System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
-						userInput4 = sc.next();
-
-					} ;
+					} while (dealerHandValue < 17);
 
 				} else if (userInput2 == "n") {
 					System.out.println("You have chosen to quit the game.\nHave a nice day!");
