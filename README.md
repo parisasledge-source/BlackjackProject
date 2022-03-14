@@ -13,3 +13,22 @@ At this time if the player's hand is larger than 21, the player is busted and th
 If the player decides to stand then a new card will be given to dealer and the same rules are applied to the dealer's hand to determine if the dear is busted or the wins.
 There are a set of rules which applies to the dealer specifically and not to the player. The Dealer's decisions are based on game logic in the program.
 The Dealer must decide to Hit or Stay based on the rules of Blackjack: if the Dealer's hand total is below 17, the Dealer must Hit; if the hand total is 17 or above, the Dealer must Stay.
+
+### Lessons Learned
+
+The design of a OO class structure.
+
+The use of encapsulation
+
+The design of an abstract class and the use an abstract method
+
+
+### Technologies Used
+
+Object oriented design
+
+Encapsulation
+
+Abstract method
+
+APIE
