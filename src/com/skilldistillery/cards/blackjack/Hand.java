@@ -9,11 +9,9 @@ public abstract class Hand{
 	
 	protected List<Card> cards;
 
-	
-	
 	public Hand() {	
 		super();
-		this.cards = new ArrayList<>(52);
+		this.cards = new ArrayList<>();
 	}
 	
 	public void addCard(Card card) {
@@ -36,13 +34,19 @@ public abstract class Hand{
 //		
 //	}
 	
+	public String showCard() {
+		return "Card: " + cards.get(0);
+	}
+	
+	public String showCard2() {
+		return "Card: " + cards.get(1);
+	}
+	
 	public abstract int getHandValue();
 
 	@Override
 	public String toString() {
-		
-		String output = "Hand Value: " + getHandValue();
-		return output;
+		return "Hand [cards=" + cards + "]" + getHandValue();
 	}
 
 }

@@ -5,6 +5,7 @@ import com.skilldistillery.cards.common.Card;
 public class BlackjackHand extends Hand{
 	
 	public BlackjackHand() {
+		super();
 	}
 	
 	public void addCard(Card card) {
@@ -15,17 +16,15 @@ public class BlackjackHand extends Hand{
 //		for (Card card : cards) {	
 //		}
 //		return 0;
-		
-	//}
+//		
+//	}
 	
 	public boolean isBlackJack() {
-		System.out.println("Black Jack! Yohooo!");
 		return false;
 		
 	}
 	
 	public boolean isBust() {
-		System.out.println("Busted! Too Bad!");
 		return false;
 		
 	}
@@ -34,20 +33,24 @@ public class BlackjackHand extends Hand{
 	
 	int handValue = 0;
 	for (Card dealtCard : cards) {
-		int cardValue = dealtCard.getValue();
 		//System.out.println(dealtCard + " (value:" + dealtCard.getValue() +")");		
-		handValue += cardValue;
+		handValue += dealtCard.getValue();
 	}
 	
 	return handValue;
 	
 }
+
+//	public String showCard() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	public String showCard2() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	
-	@Override
-	public String toString() {
-		
-		String output = "Hand Value: " + getHandValue();
-		return output;
-	}
+	
 
 }

@@ -32,10 +32,10 @@ public class BlackjackApp {
 
 		dealer.shuffle();
 
-		hand.addCard(dealer.dealCard());
+		//hand.addCard(dealer.dealCard());
 
-		List<Card> playerHand;
-		List<Card> dealerHand;
+		//List<Card> playerHand;
+		//List<Card> dealerHand;
 
 		String userInput1, userInput2, userInput3 = "", userInput4 = "";
 		// System.out.println("This hand: " + hand);
@@ -52,42 +52,44 @@ public class BlackjackApp {
 
 				if (userInput2.equals("y")) {
 
-				playerHand = new ArrayList<>();
-				dealerHand = new ArrayList<>();
+				//playerHand = new ArrayList<>();
+				//dealerHand = new ArrayList<>();
 
-				playerHand.add(dealer.dealCard());
-				System.out.println("Player's first card: " + playerHand.get(0));
+				//playerHand.add(dealer.dealCard());
+				player.getCard(dealer.dealCard());
+				System.out.println("Player's first card: " + player.showCard());
 				
-				dealerHand.add(dealer.dealCard());
+				dealer.getCard(dealer.dealCard());
 				System.out.println("Dealer's first card: Hidden ");
 				
-				playerHand.add(dealer.dealCard());
-				System.out.println("Player's second card: " + playerHand.get(1));
+				player.getCard(dealer.dealCard());
+				System.out.println("Player's second card: " + player.showCard2());
 
-				dealerHand.add(dealer.dealCard());
-				System.out.println("Dealer's second card: " + dealerHand.get(1));
+				dealer.getCard(dealer.dealCard());
+				System.out.println("Dealer's second card: " + player.showCard2());
 				
 				System.out.println("Deck size: " + dealer.deckSize());
 				
 				while (!userInput3.equals("s")) {
-					playerHand.add(dealer.dealCard());
+					
+					//player.getCard(dealer.dealCard());
 
 					
 					System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
 					userInput3 = sc.next();
 					
-					System.out.println("Player's hand: " + playerHand);
+					System.out.println("Player's hand: " + player.showCard());
 					System.out.println("Deck size: " + dealer.deckSize());
 					System.out.println("Hand value: " + player.displayValue());
 
 					// System.out.println("This hand: " + hand);
 				} ;
-
+				
 
 				do {
-					dealerHand.add(dealer.dealCard());
+					//dealer.getCard(dealer.dealCard());
 
-					System.out.println("Dealer's hand: " + dealerHand);
+					System.out.println("Dealer's hand: " + dealer.showCard());
 					System.out.println("Deck size: " + dealer.deckSize());
 
 					System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
