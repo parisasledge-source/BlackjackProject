@@ -47,14 +47,8 @@ public class BlackjackUtility {
 					dealerHand = new ArrayList<>();
 
 					playerHand.add(dealer.dealCard());
-					// int a = dealerHand.get(0).getValue();
-
 					dealerHand.add(dealer.dealCard());
-					// int b = dealerHand.get(1).getValue();
-					// int c = a + b;
-
 					playerHand.add(dealer.dealCard());
-
 					dealerHand.add(dealer.dealCard());
 
 					System.out.println("Player's first card: " + playerHand.get(0));
@@ -70,7 +64,6 @@ public class BlackjackUtility {
 					if (c1 == 21) {
 						pushPlayerValue = c1;
 						hand.isBlackJack();
-						//break;
 					}
 					
 					System.out.println("Dealer's first card: Hidden ");
@@ -80,7 +73,6 @@ public class BlackjackUtility {
 					int c2 = a2 + b2;
 					
 					if (c2 == 21) {
-						//pushPlayerValue = c1;
 						hand.isBlackJack();
 						System.out.println("Dealer's second card: " + dealerHand.get(0));
 						System.out.println("Dealer's second card: " + dealerHand.get(1));
@@ -89,14 +81,6 @@ public class BlackjackUtility {
 
 					System.out.println("Hand value: " + "Hidden + " + b2 );
 					System.out.println(" ");
-//					if (c == 21) {
-//						
-//						System.out.println("Dealer's first card: " + dealerHand.get(0));
-//						System.out.println("Dealer's second card: " + dealerHand.get(1));
-//						hand.isBlackJack();
-//						System.out.println("Dealer wins!");
-//						//break;	
-//					}
 
 					System.out.println("Deck size: " + dealer.deckSize());
 
@@ -121,7 +105,6 @@ public class BlackjackUtility {
 							break;
 						} else if (playerHandValue == 21) {
 							pushPlayerValue = playerHandValue;
-							//hand.isBlackJack();
 							break;
 						}
 
@@ -129,16 +112,8 @@ public class BlackjackUtility {
 						userInput3 = sc.next();
 					} while (!userInput3.equals("s"));
 
-					// System.out.println(bustedPlayerValue);
-
 					int dealerHandValue = 0;
 					do {
-						// if (hand.isBust()) {
-						// break;
-						// }
-						// if (hand.isBlackJack()) {
-						// break;
-						// }
 
 						System.out.println("\nDealer's first card: " + dealerHand.get(0));
 						System.out.println("Dealer's second card: " + dealerHand.get(1));
@@ -149,14 +124,8 @@ public class BlackjackUtility {
 						System.out.println("Hand value: " + c3 );
 						System.out.println(" ");
 						
-
 						if (bustedPlayerValue > 21) {
-							// hand.isBust();
 							break;
-							// }else if (bustedPlayerValue == 21) {
-							// hand.isBlackJack();
-							// System.out.println("Dealer wins!");
-							// break;
 						}
 
 						int a = dealerHand.get(0).getValue();
@@ -171,9 +140,6 @@ public class BlackjackUtility {
 						} else {
 
 							System.out.println("Adding a dealer card... ");
-							// System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
-							// userInput4 = sc.next();
-
 							dealerHand.add(dealer.dealCard());
 
 							System.out.println("Dealer's hand: " + dealerHand);
@@ -184,28 +150,23 @@ public class BlackjackUtility {
 							}
 							System.out.println("Hand value: " + dealerHandValue);
 
-							// System.out.println("\nPlease enter 'h' for hit, 's' for stand: ");
-							// userInput4 = sc.next();
 							if (dealerHandValue > 21) {
 								hand.isBust();
 								System.out.println("Player wins!");
 								break;
 							} else if (dealerHandValue == 21 && pushPlayerValue == 21) {
 								System.out.println("Push!");
-								//hand.isBlackJack();
 								break;
 							}else if (dealerHandValue == 21 && pushPlayerValue < 21){
-								//hand.isBlackJack();
+								
 								System.out.println("Dealer wins!");
 								break;
 							}else if (dealerHandValue < 21 && pushPlayerValue == 21) {
-								//hand.isBlackJack();
+							
 								System.out.println("Player wins!");
 								break;
 							}else if (dealerHandValue < 21 && pushPlayerValue < 21){
-								//hand.isBlackJack();
-								//System.out.println("Dealer wins!");
-								
+															
 								if (dealerHandValue > pushPlayerValue) {
 									System.out.println("Dealer wins!");
 								}else if (dealerHandValue < pushPlayerValue) {
